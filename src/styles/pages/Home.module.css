@@ -6,14 +6,31 @@
 
   display: flex;
   flex-direction: column;
+
 }
 
-
 .container section {
-  flex: 1;
-
+  flex: 1; 
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6.25rem;
   align-items: center;
+
+}
+
+@media (max-width: 500px) {
+  .container section {
+    grid-template-columns: 1fr;
+    gap: 6.25rem;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .container section {
+    grid-template-columns: 1fr;
+    gap: 6.25rem;
+    padding: 5rem 0;
+  }
+
 }
