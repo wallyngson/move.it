@@ -6,6 +6,8 @@ import { Profile } from "../components/Profile";
 import { Countdown } from "../components/Countdown";
 import { ChallengeBox } from "../components/ChallengeBox";
 
+import { CountdownProvider } from "../contexts/CountdownContext";
+
 import styles from "../styles/pages/Home.module.css";
 import Head from 'next/head';
 
@@ -18,18 +20,20 @@ export default function Home() {
       </Head>
       
       <ExperienceBar />
-    
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
-    </div>
-    
-  )
-}
+      
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
+
+    </div>   
+  );
+};
