@@ -5,7 +5,7 @@ let countdownTimeOut: NodeJS.Timeout
 
 export function Countdown () {
 
-  const [time, setTime] = useState(0.1 * 60)
+  const [time, setTime] = useState(25 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinish, setHasFinish] = useState(false)
 
@@ -18,7 +18,7 @@ export function Countdown () {
   function resetCountdown() {
     clearTimeout(countdownTimeOut)
     setIsActive(false)
-    setTime(0.1 * 60)
+    setTime(25 * 60)
   }
 
   function startCountdown() {
