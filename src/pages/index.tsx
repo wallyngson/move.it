@@ -16,7 +16,7 @@ import Head from 'next/head';
 interface HomeProps {
   level: number;
   currentExperience: number;
-  challengerCompleted: number;
+  challengesCompleted: number;
 }
 
 export default function Home(props: HomeProps) {
@@ -24,7 +24,7 @@ export default function Home(props: HomeProps) {
     <ChallengesProvider 
       level={props.level}  
       currentExperience={props.currentExperience}
-      challengerCompleted={props.challengerCompleted}
+      challengesCompleted={props.challengesCompleted}
       >
         <div className={styles.container}>
           <Head>
@@ -58,13 +58,13 @@ export default function Home(props: HomeProps) {
 */
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const { level, currentExperience, challengerCompleted } = ctx.req.cookies;
+  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
 
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
-      challengerCompleted: Number(challengerCompleted),
+      challengesCompleted: Number(challengesCompleted),
     }
   }
 };
